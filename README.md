@@ -53,7 +53,9 @@ Os dados relacionais presentes na DataFrame `relacional_df` permitiram a contage
 Os escores de modificações ativas ($S_a$), de modificações passivas ($S_p$) de interações totais (S_t) são dados, respectivamente, pelas seguintes fórmulas:
 
 $$S_a = \log_{10}\left( \sum_{i=1}^N A_i \right)$$
+
 $$S_p = \log_{10}\left( \sum_{i=1}^N P_i \right)$$
+
 $$S_t = \log_{10}\left( \sum_{i=1}^N P_i + A_i \right)$$
 
 onde $N$ é o número total de documentos no ano de referência e $P_i$ é o número total de modificações passivas do documento $i$ e $A_i$ é o número total de modificações ativas do documento $i$.
