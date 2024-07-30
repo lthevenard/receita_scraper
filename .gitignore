@@ -1,0 +1,11 @@
+.Rproj.user/
+/.RData
+/.Rhistory
+/receita_scraper.Rproj
+*.csv
+*.html
+/data_output/content_table.rds
+/data_output/incidencia_impostos.rds
+/data_output/select_database_complete.rds
+/data_output/totais.rds
+/data_output/tax_counts.rds
