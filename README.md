@@ -12,6 +12,10 @@ Os resultados obtidos mostram, como esperado, que a produção normativa da RFB 
 
 Todos esses fatores apontam para uma atividade normativa com impacto crescente sobre os contribuintes e sobre a sociedade como um todo. No entanto, a pesquisa aqui realizada ainda pode ser, em muitos aspectos, aperfeiçoada, de forma a aprimorar a compreensão da academia acerca da produção normativa da RFB. Com o surgimento dos grandes modelos de linguagem, as técnicas de análise textual disponíveis a estudos como este estão em pleno processo de expansão. Esperamos com este trabalho apenas dar um 'pontapé inicial', contribuindo para um campo que consideramos promissor, com a expectativa de suscitar debates e críticas construtivas sobre este tema.
 
+### Dashboard com os resultados
+
+Além de ter gerado uma publicação acadêmica, a pesquisa também teve seus resultados divulgados em um Shiny Dashboard, que possui um [respositório próprio](https://github.com/lthevenard/dashboard_prod_normativa_da_receita).
+
 ## O que você encontra neste repositório
 
 O código do repositório é formado por três scripts principais, salvos na pasta `R/`, entitulados: `1_scraper.R`, `2_data_transformations.R` e `3_analysis.R`.
