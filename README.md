@@ -50,6 +50,14 @@ Novamente foram utilizadas expressões regulares simples para identificar citaç
 
 Os dados relacionais presentes na DataFrame `relacional_df` permitiram a contagem anual de interações entre os atos normativos e a construção de escores de modificações (ativas, passivas e totais) para cada ano da série histórica, além das médias de modificações ativas e passivas identificadas ano a ano. Essas informações foram consolidadas na DataFrame `mod_relacional`, salva em `data_output/mod_relacional.rds`.
 
+Os escores de modificações ativas ($S_a$), de modificações passivas ($S_p$) de interações totais (S_t) são dados, respectivamente, pelas seguintes fórmulas:
+
+$$S_a = \log_{10}\left( \sum_{i=1}^N A_i \right)$$
+$$S_p = \log_{10}\left( \sum_{i=1}^N P_i \right)$$
+$$S_t = \log_{10}\left( \sum_{i=1}^N P_i + A_i \right)$$
+
+onde $N$ é o número total de documentos no ano de referência e $P_i$ é o número total de modificações passivas do documento $i$ e $A_i$ é o número total de modificações ativas do documento $i$.
+
 
 ### Dados disponíveis neste repositório
 
@@ -103,18 +111,12 @@ A seguir, uma breve descrição dos dados presentes nas principais DataFrames qu
 
  - A DataFrame `mod_relacional` (salva em `/data_ouput/mod_relacional.rds`) é gerada a partir do processamento dos dados relacionais presentes na DataFrame `relacional_df`. Os dados desta DataFrame também estão agregados por ano, consistindo em contagens utilizadas para a construção dos escores de modificações ativas, passivas e totais divulgados na pesquisa. A Dataframe `mod_relacional` é composta pelas seguintes colunas:
    - `ano` (`int`): ano de referência para a contagem de modificações.
-   - `mod_ativa` (`dbl`): escore de modificações ativas[^2] no ano de referência.
-   - `mod_passiva` (`dbl`): escore de modificações passivas[^3] no ano de referência.
-   - `interacoes_total` (`dbl`): escore de interações totais (passivas + ativas)[^4] no ano de referência.
+   - `mod_ativa` (`dbl`): escore de modificações ativas no ano de referência.
+   - `mod_passiva` (`dbl`): escore de modificações passivas no ano de referência.
+   - `interacoes_total` (`dbl`): escore de interações totais (passivas + ativas) no ano de referência.
    - `media_mod_ativa` (`dbl`): número médio de modificações ativas, por ato normativo, no ano de referência.
    - `media_mod_passiva` (`dbl`): número médio de modificações passivas, por ato normativo, no ano de referência.
 
 
 
 [^1]: A titulo de exemplo, em 15/07/2024 foi realizado uma raspagem, para o intervalo de anos `1988:2024`, na qual foram identificados um total de 100.774 atos distintos, registrados na DataFrame `normas`. Destes, apenas um subgrupo de 15.634 atos (cerca de 15,5%) eram de tipos potencialmente normativos, tendo sido incluídos na segunda etapa de extração.
-
-[^2]: O escore de modificações ativas é dado pela fórmula: $\log_{10}\left( \sum_{i=1}^N A_i\right)$, onde $N$ é o número total de documentos no ano de referência e $A_i$ é o número total de modificações ativas do documento $i$.
-
-[^3]: O escore de modificações passivas é dado pela fórmula: $\log_{10}\left( \sum_{i=1}^N P_i\right)$, onde $N$ é o número total de documentos no ano de referência e $P_i$ é o número total de modificações passivas do documento $i$.
-
-[^4]: O escore de interações totais é dado pela fórmula: $\log_{10}\left( \sum_{i=1}^N P_i + A_i \right)$, onde $N$ é o número total de documentos no ano de referência e $P_i$ é o número total de modificações passivas do documento $i$ e $A_i$ é o número total de modificações ativas do documento $i$.
